@@ -3,7 +3,11 @@
     <div class="home__cover"></div>
     <div class="home__line"></div>
   </div>
-   <router-view></router-view>
+  <nav style="position: relative;">
+    <router-link to="/">action</router-link>
+    <router-link to="/step_1">details</router-link>
+  </nav>
+  <router-view></router-view>
 </template>
 <script>
 </script>
