@@ -4,7 +4,7 @@ module.exports = defineConfig({
   filenameHashing: false,
   lintOnSave: false,
   publicPath:
-    process.env.NODE_ENV === "production" ? "/docs/" : "/",
+    process.env.NODE_ENV === "production" ? "/bibinance/" : "/",
 })
 
 
