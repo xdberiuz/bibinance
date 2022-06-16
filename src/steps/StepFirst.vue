@@ -447,8 +447,8 @@ input[type="radio"]:checked {
     }
 
     .question__text {
-        height: 170px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        height: unset;
     }
 
     .questin__imgs {
