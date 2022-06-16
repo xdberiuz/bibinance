@@ -1,6 +1,6 @@
 <template>
-    <div class="section">
-        <div class="section__left">
+    <div class="reg__section">
+        <div class="reg__section__left">
             <h1 class="reg__title">Поздравляем, вам стали доступны инвестиции на платформе «Halyk Инвестиции»!</h1>
             <div style="display: flex;justify-content: center;">
                 <img src="../assets/img/step_registration.png" alt="Успешная регистрация" class="reg__img">
@@ -10,7 +10,7 @@
                 <p>Специалист свяжется с Вами в течение 1 дня</p>
             </div>
         </div>
-        <div class="section__right">
+        <div class="reg__section__right">
             <div class="reg__userInfo">
                 <label class="reg__textInfo" for="userName">Введите имя</label>
                 <input type="text" name="userName" id="userName">
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 <style>
-.section {
+.reg__section {
     display: flex;
     position: relative;
     height: 517px;
@@ -63,7 +63,7 @@ export default {
     border-radius: 4px;
 }
 
-.section__left {
+.reg__section__left {
     max-width: 600px;
     padding: 30px;
     display: flex;
@@ -87,7 +87,7 @@ export default {
     color: #1E2329;
 }
 
-.section__right {
+.reg__section__right {
     min-width: 370px;
     height: inherit;
     background: #171717;
@@ -191,18 +191,18 @@ input[type=number] {
     }
 }
 
-@media screen and (max-width: 791px) {
+@media screen and (max-width: 850px) {
     #app {
         padding: 0;
     }
 
-    .section {
+    .reg__section {
         margin: 0;
         flex-direction: column;
         height: unset;
     }
 
-    .section__left {
+    .reg__section__left {
         width: unset;
         max-width: unset;
         height: 480px;
@@ -211,7 +211,7 @@ input[type=number] {
         align-items: center;
     }
 
-    .section__right {
+    .reg__section__right{
         min-width: unset;
         width: unset;
         height: 495px;
