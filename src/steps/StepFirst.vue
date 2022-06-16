@@ -438,7 +438,7 @@ input[type="radio"]:checked {
         flex-direction: column-reverse;
         align-items: center;
         height: 100%;
-        justify-content: end;
+        justify-content: flex-end;
         margin-bottom: 10px;
     }
 
