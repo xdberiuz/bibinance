@@ -1,9 +1,11 @@
 <template>
     <div class="question">
-        <div v-if="question">
-            <h2 class="question__text">{{ question.text }}</h2>
-            <div class="question__img">
-                <img :src="question.img" :alt="question.alt">
+        <div v-if="question" class="wrapper">
+            <div class="mobile__response">
+                <div class="question__img">
+                    <img :src="question.img" :alt="question.alt">
+                </div>
+                <h2 class="question__text">{{ question.text }}</h2>
             </div>
             <ul>
                 <li v-for="response in question.responses">
@@ -32,7 +34,7 @@
             </div>
             <div class="question_controller" v-if="questionIndex === 0">
                 <!-- <button class="controller" @click="prev" :disabled="questionIndex < 1">Назад</button> -->
-                <router-link style="height: 40px;" class="controller" to="/"> Назад </router-link>
+                <router-link style="height: 40px;" class="controller" to="/bibinance/"> Назад </router-link>
                 <button class="controller" @click="next" :disabled="!answerSelected">Далее</button>
             </div>
             <div class="question_controller" v-else-if="questionIndex >= 1 && questionIndex <= 6">
@@ -53,7 +55,7 @@ export default {
     name: 'step-first',
     data() {
         return {
-            questionIndex: 0,
+            questionIndex: 7,
             answers: [],
             quiz: {
                 'questions': [
@@ -202,9 +204,10 @@ export default {
 .question__controllers {
     position: absolute;
     bottom: 5px;
-    right: -9px;
+    right: 5%;
     display: flex;
-    width: 540px;
+    width: 450px;
+    justify-content: space-between;
 }
 
 .question__steps {
@@ -215,7 +218,6 @@ export default {
 }
 
 .question__radios {
-    width: 110px;
     display: flex;
 }
 
@@ -301,7 +303,7 @@ input[type="radio"]:checked {
 }
 
 .question_controller {
-    width: 500px;
+    width: 320px;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -333,5 +335,120 @@ input[type="radio"]:checked {
 
 .controller.active {
     border-color: #F0B90B;
+}
+
+@media screen and (max-width: 1265px) {
+    .question {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+
+    .question__controllers {
+        position: unset;
+        display: flex;
+        justify-content: space-between;
+        width: inherit;
+    }
+
+    .question__img {
+        position: absolute;
+        top: 40px;
+        right: 30px;
+    }
+
+    .question__img img {
+        width: 400px;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .question__text {
+        font-size: 21px;
+        width: inherit;
+    }
+
+    .question ul {
+        width: inherit;
+    }
+
+    .question__answer {
+        width: inherit;
+    }
+
+}
+
+@media screen and (max-width: 930px) {
+    .question {
+        height: unset;
+    }
+
+    .question__img img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .question {
+        height: unset;
+    }
+
+    .question__img img {
+        width: 300px;
+    }
+
+    .question__img {
+        position: unset;
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        max-width: 100%;
+    }
+
+    .question__text {
+        text-align: center;
+    }
+
+    .mobile__response {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .question__radios {
+        width: unset;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .question {
+        margin: 0;
+        height: 100vh;
+        justify-content: unset;
+    }
+
+    .question__controllers {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .mobile__response {
+        flex-direction: column-reverse;
+    }
+
+    .question__text {
+        height: 170px;
+        margin-bottom: 10px;
+    }
+
+    .question__img img {
+        width: 320px;
+    }
 }
 </style>

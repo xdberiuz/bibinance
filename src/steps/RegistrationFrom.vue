@@ -25,13 +25,13 @@
             </div>
             <div class="reg__userInfo">
                 <label class="reg__textInfo" for="userTel">Введите телефон</label>
-                <input type="number" name="userTel" id="userTel">
+                <input type="text" v-model="value" name="userTel" id="userTel" @input="acceptNumber">
             </div>
-            <button class="reg__success"><span>Получить доступ</span></button>
+            <router-link class="reg__success" to="/final_step"><span>Получить доступ</span></router-link>
             <div class="reg__policy">
                 <label for="policy">
                     <input type="radio" name="policy" id="policy">
-                    <span>C политикой конфиденциальности</span> ознакомлен(а)
+                    <span style="margin-right: 5px;">C политикой конфиденциальности </span> ознакомлен(а)
                 </label>
             </div>
         </div>
@@ -39,9 +39,15 @@
 </template>
 <script>
 export default {
-    name: 'blog',
+    name: 'reg-form',
     data() {
         return {
+            value: ''
+        }
+    }, methods: {
+        acceptNumber() {
+            var x = this.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            this.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
         }
     }
 }
@@ -128,6 +134,9 @@ input:focus {
     width: 100%;
     line-height: 48px;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 .reg__success span {

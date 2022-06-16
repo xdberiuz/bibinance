@@ -20,12 +20,8 @@
 <style>
 body {
   background-color: #181A20;
-  overflow: hidden;
 }
 
-#app {
-  padding: 0.1px;
-}
 
 .header {
   z-index: 10;
@@ -95,5 +91,40 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-image: url(../assets/img/arrow.png);
+}
+
+@media screen and (max-width: 856px) {
+  .header {
+    width: 100%;
+  }
+
+  .header__title {
+    font-size: 32px;
+  }
+
+  .header__text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 500px;
+    padding: 20px;
+  }
+
+  .header__title {
+    font-size: 20px;
+  }
+
+  .header__text {
+    font-size: 16px;
+  }
+
+  .header__link::after {
+    right: unset;
+    top: unset;
+    bottom: -62px;
+  }
 }
 </style>
