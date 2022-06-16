@@ -3,7 +3,7 @@
         <div v-if="question" class="wrapper">
             <div class="mobile__response">
                 <div class="question__img">
-                    <img :src="question.img" :alt="question.alt">
+                    <img class="questin__imgs" :src="question.img" :alt="question.alt">
                 </div>
                 <h2 class="question__text">{{ question.text }}</h2>
             </div>
@@ -55,7 +55,7 @@ export default {
     name: 'step-first',
     data() {
         return {
-            questionIndex: 7,
+            questionIndex: 0,
             answers: [],
             quiz: {
                 'questions': [
@@ -197,7 +197,7 @@ export default {
     right: 30px;
 }
 
-.question__img img {
+.questin__imgs {
     width: 500px;
 }
 
@@ -359,7 +359,7 @@ input[type="radio"]:checked {
         right: 30px;
     }
 
-    .question__img img {
+    .questin__imgs {
         width: 400px;
     }
 
@@ -388,7 +388,7 @@ input[type="radio"]:checked {
         height: unset;
     }
 
-    .question__img img {
+    .questin__imgs {
         width: 300px;
     }
 }
@@ -398,7 +398,7 @@ input[type="radio"]:checked {
         height: unset;
     }
 
-    .question__img img {
+    .questin__imgs {
         width: 300px;
     }
 
@@ -431,11 +431,15 @@ input[type="radio"]:checked {
         margin: 0;
         height: 100vh;
         justify-content: unset;
+        padding: 10px 10px 0 10px;
     }
 
     .question__controllers {
         flex-direction: column-reverse;
         align-items: center;
+        height: 100%;
+        justify-content: end;
+        margin-bottom: 10px;
     }
 
     .mobile__response {
@@ -447,7 +451,7 @@ input[type="radio"]:checked {
         margin-bottom: 10px;
     }
 
-    .question__img img {
+    .questin__imgs {
         width: 320px;
     }
 }

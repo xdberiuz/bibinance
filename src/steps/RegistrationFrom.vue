@@ -31,7 +31,7 @@
             <div class="reg__policy">
                 <label for="policy">
                     <input type="radio" name="policy" id="policy">
-                    <span style="margin-right: 5px;">C политикой конфиденциальности </span> ознакомлен(а)
+                    <span>C политикой конфиденциальности </span> ознакомлен(а)
                 </label>
             </div>
         </div>
@@ -56,15 +56,15 @@ export default {
 .section {
     display: flex;
     position: relative;
-    width: 980px;
     height: 517px;
-    margin: 10% auto;
+    max-width: 970px;
+    margin: 5% auto;
     background-color: white;
     border-radius: 4px;
 }
 
 .section__left {
-    width: 600px;
+    max-width: 600px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,7 @@ export default {
 }
 
 .section__right {
-    width: 380px;
+    min-width: 370px;
     height: inherit;
     background: #171717;
     padding: 30px;
@@ -126,6 +126,10 @@ export default {
 input:focus {
     outline: none !important;
     border: 1px solid #F0B90B;
+}
+
+.reg__policy span {
+    margin-right: 5px;
 }
 
 .reg__success {
@@ -179,5 +183,60 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
     /* Firefox */
+}
+
+@media screen and (max-width: 900px) {
+    img {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 791px) {
+    #app {
+        padding: 0;
+    }
+
+    .section {
+        margin: 0;
+        flex-direction: column;
+        height: unset;
+    }
+
+    .section__left {
+        width: unset;
+        max-width: unset;
+        height: 480px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section__right {
+        min-width: unset;
+        width: unset;
+        height: 495px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .reg__title {
+        text-align: center;
+    }
+
+    .reg__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reg__text p {
+        text-align: center;
+    }
+
+    .reg__policy span {
+        margin-right: 2px;
+    }
 }
 </style>

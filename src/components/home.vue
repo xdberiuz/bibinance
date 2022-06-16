@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__logo">
-      <img src="../assets/img/mainLogo.png" alt="Binance">
+      <img class="header__img" src="../assets/img/mainLogo.png" alt="Binance">
     </div>
     <div class="header__title">
       <span class="header__title-bold"> Halyk Finance</span> сколько вы сможете зарабатывать на инвестициях?
@@ -22,6 +22,10 @@ body {
   background-color: #181A20;
 }
 
+
+.header__img {
+  width: 100%;
+}
 
 .header {
   z-index: 10;
